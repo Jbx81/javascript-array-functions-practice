@@ -113,19 +113,28 @@ const characters = [
 
 //***EVERY***
 //1. Does every character have blue eyes?
-const allBlue = characters.every((char) => char.eye_color === "blue");
-console.log("Do all characters have blue eyes? ", allBlue);
-//2. Does every character have mass more than 40?
-const massOver40 = characters.every((char) => char.mass > 40);
-console.log("Do all characters have a mass over 40? ", massOver40);
-//3. Is every character shorter than 200?
-const heightUnder200 = characters.every(char=>char.height < 200);
-console.log("Are all characters shorter than 200? ", heightUnder200);
-//4. Is every character male?
-console.log("Are all characters male? ", characters.every(char=>char.gender === 'male'));
+// const allBlue = characters.every((char) => char.eye_color === "blue");
+// console.log("Do all characters have blue eyes? ", allBlue);
+// //2. Does every character have mass more than 40?
+// const massOver40 = characters.every((char) => char.mass > 40);
+// console.log("Do all characters have a mass over 40? ", massOver40);
+// //3. Is every character shorter than 200?
+// const heightUnder200 = characters.every(char=>char.height < 200);
+// console.log("Are all characters shorter than 200? ", heightUnder200);
+// //4. Is every character male?
+// console.log("Are all characters male? ", characters.every(char=>char.gender === 'male'));
 
 //***SOME***
 //1. Is there at least one male character?
+const oneMale = characters.some(char=>char.gender === 'male');
+console.log('is there at least one male? ', oneMale);
 //2. Is there at least one character with blue eyes?
+const oneBlueEyed = characters.some(char=>char.eye_color === 'blue');
+console.log('is there at least one character with blue eyes? ', oneBlueEyed);
 //3. Is there at least one character taller than 210?
+const tallerThan210 = characters.some(char=>char.height > 210);
+console.log('is there at least one character taller than 210? ', tallerThan210);
+
 //4. Is there at least one character that has mass less than 50?
+const massLess50 = characters.some(char=>char.mass < 50);
+console.log('is there at least one character with a mass less than 50? ', massLess50);
