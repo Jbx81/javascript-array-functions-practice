@@ -1,32 +1,32 @@
 const characters = [
-    {
-        name: 'Luke Skywalker',
-        height: 172,
-        mass: 77,
-        eye_color: 'blue',
-        gender: 'male',
-    },
-    {
-        name: 'Darth Vader',
-        height: 202,
-        mass: 136,
-        eye_color: 'yellow',
-        gender: 'male',
-    },
-    {
-        name: 'Leia Organa',
-        height: 150,
-        mass: 49,
-        eye_color: 'brown',
-        gender: 'female',
-    },
-    {
-        name: 'Anakin Skywalker',
-        height: 188,
-        mass: 84,
-        eye_color: 'blue',
-        gender: 'male',
-    },
+  {
+    name: "Luke Skywalker",
+    height: 172,
+    mass: 77,
+    eye_color: "blue",
+    gender: "male",
+  },
+  {
+    name: "Darth Vader",
+    height: 202,
+    mass: 136,
+    eye_color: "yellow",
+    gender: "male",
+  },
+  {
+    name: "Leia Organa",
+    height: 150,
+    mass: 49,
+    eye_color: "brown",
+    gender: "female",
+  },
+  {
+    name: "Anakin Skywalker",
+    height: 188,
+    mass: 84,
+    eye_color: "blue",
+    gender: "male",
+  },
 ];
 
 //***MAP***
@@ -71,7 +71,6 @@ const characters = [
 // }, {});
 // console.log("total number of characters per name: ", totalCharsInAllNames);
 
-
 //***FILTER***
 //1. Get characters with mass greater than 100
 // const massGreater100 = characters.filter(char=>char.mass>100);
@@ -89,22 +88,27 @@ const characters = [
 // const females = characters.filter(char=>char.gender === 'female');
 // console.log('females: ', females);
 
-
 //***SORT***
 //1. Sort by mass
-const massAsc = characters.sort((a, b)=> a.mass - b.mass);
+const massAsc = characters.sort((a, b) => a.mass - b.mass);
 console.log("sorted by mass ascending: ", massAsc);
 //2. Sort by height
 
-const heightAsc = characters.sort((a, b)=> a.height - b.height);
+const heightAsc = characters.sort((a, b) => a.height - b.height);
 console.log("sorted by height ascending: ", heightAsc);
 //3. Sort by name
 
-const nameAsc = characters.sort((a, b)=> a.name - b.name);
+const nameAsc = characters.sort((a, b) => {
+  if (a.name < b.name) return -1;
+  return 1;
+});
 console.log("sorted by name ascending: ", nameAsc);
 //4. Sort by gender
 
-const genderAsc = characters.sort((a, b)=> a.gender - b.gender);
+const genderAsc = characters.sort((a) => {
+  if (a.gender === 'female') return -1;
+  return 1;
+});
 console.log("sorted by gender ascending: ", genderAsc);
 
 //***EVERY***
